@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "../css/ListVideo.css";
-import "../css/spinner.css";
+
 const ListVideo = ({ query }) => {
     const [videos, setVideo] = useState([]);
     const [loadding, setIsLoadding] = useState(true);
@@ -9,6 +9,7 @@ const ListVideo = ({ query }) => {
 
     useEffect(() => {
         const fetchVideos = async () => {
+            setIsLoadding(false);
             const res = await axios.get(
                 "https://www.googleapis.com/youtube/v3/search",
                 {
@@ -23,7 +24,6 @@ const ListVideo = ({ query }) => {
                 },
             );
             setVideo(res.data.items);
-            setIsLoadding(false);
         };
         fetchVideos();
     }, [query]);
@@ -31,7 +31,7 @@ const ListVideo = ({ query }) => {
     if (loadding) {
         return (
             <>
-                <span class="loader"></span>
+                <span className="spinner"></span>
             </>
         );
     }

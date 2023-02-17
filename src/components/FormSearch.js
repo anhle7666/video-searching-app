@@ -12,20 +12,21 @@ const FormSearch = ({ setQuery }) => {
     return (
         <>
             <form onSubmit={submitForm} role="search">
-                <label for="search">Search for stuff</label>
+                <label htmlFor="search">Search for stuff</label>
                 <input
                     id="search"
+                    className="input-search"
                     type="search"
                     placeholder="Search..."
                     value={text}
                     onChange={(e) => {
                         setText(e.target.value);
                     }}
-                    autofocus
+                    autoFocus
                     autoComplete="off"
                     required
                 />
-                <button>Search</button>
+                <button className="btn-search">Search</button>
             </form>
         </>
     );
