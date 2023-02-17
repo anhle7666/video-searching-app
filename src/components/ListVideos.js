@@ -30,9 +30,9 @@ const ListVideo = ({ query }) => {
 
     if (loadding) {
         return (
-            <div>
+            <>
                 <span class="loader"></span>
-            </div>
+            </>
         );
     }
 
