@@ -1,0 +1,32 @@
+.video {
+    display: flex;
+    margin: 20px 10px;
+    cursor: pointer;
+    background-color: #eee;
+    padding: 10px;
+    border-radius: 15px;
+    max-width: 768px;
+    min-width: 600px;
+    transition: all 0.3s ease-out;
+}
+
+a {
+    text-decoration: none;
+}
+
+.video:hover {
+    background-color: #ddd;
+}
+
+.video-thumbnails {
+    border-radius: 15px;
+    margin: 0 10px;
+}
+
+.video-title {
+    margin: 10px 20px;
+    line-height: 1.5;
+    font-size: 18px;
+    text-decoration: none;
+    color: #000;
+}

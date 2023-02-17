@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./css/App.css";
+import Logo from "./assets/logo";
+import { useState } from "react";
+import FormSearch from "./components/FormSearch";
+import ListVideo from "./components/ListVideos";
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [query, setQuery] = useState("chill");
+    return (
+        <div className="app">
+            <header className="app-header">
+                <div className="logo">
+                    <Logo />
+                </div>
+            </header>
+
+            <main>
+                <div className="container">
+                    <div>
+                        <FormSearch query={query} setQuery={setQuery} />
+                    </div>
+                    <div className="list-view">
+                        <ListVideo query={query} />
+                    </div>
+                </div>
+            </main>
+        </div>
+    );
 }
 
 export default App;
