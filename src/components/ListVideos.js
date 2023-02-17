@@ -5,7 +5,7 @@ import "../css/ListVideo.css";
 const ListVideo = ({ query }) => {
     const [videos, setVideo] = useState([]);
     const [loadding, setIsLoadding] = useState(true);
-    const ApiKEY = "AIzaSyD87Nl5_Ooy6I8AnFdaS-olNpEALF9hrXs";
+    const ApiKEY = "AIzaSyBr57do5U4SJ4I8hq1m8DV3K5ZRFuJND_g";
 
     useEffect(() => {
         const fetchVideos = async () => {
@@ -40,11 +40,12 @@ const ListVideo = ({ query }) => {
         <>
             {videos.map((video) => (
                 <a
+                    key={video.id.videoId}
                     href={`https://www.youtube.com/watch?v=${video.id.videoId}`}
                     target="_blank"
                     rel="noreferrer"
                 >
-                    <div key={video.id.videoId} className="video">
+                    <div className="video">
                         <img
                             className="video-thumbnails"
                             src={video.snippet.thumbnails.medium.url}
